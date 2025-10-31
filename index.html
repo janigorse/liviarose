@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiviaRose - Handmade Hair Clips with Love</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-pink: #FF69B4;
+            --soft-purple: #E6B8F5;
+            --pastel-blue: #B4D7FF;
+            --warm-coral: #FFB4A2;
+            --gold-accent: #FFD700;
+            --soft-white: #FFF9F5;
+            --text-dark: #4A4A4A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--soft-white);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--soft-purple) 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+        }
+
+        .navbar-brand {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+            color: white !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            color: var(--gold-accent) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: var(--gold-accent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #FFF9F5 0%, #FFE5F0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,105,180,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(230,184,245,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(255,105,180,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--soft-purple) 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(255,105,180,0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,105,180,0.4);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-showcase {
+            background: white;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 15px 40px rgba(255,105,180,0.15);
+            transform: rotate(-2deg);
+            transition: all 0.3s ease;
+        }
+
+        .product-showcase:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .product-showcase img {
+            border-radius: 20px;
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .product-thumbnail {
+            background: white;
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0 8px 20px rgba(255,105,180,0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-thumbnail:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(255,105,180,0.25);
+        }
+
+        .product-thumbnail img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-pink), var(--soft-purple));
+            border-radius: 2px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #FFF9F5 0%, #FFE5F0 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            height: 100%;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-pink);
+            box-shadow: 0 15px 35px rgba(255,105,180,0.2);
+        }
+
+        .benefit-icon {
+            font-size: 3.5rem;
+            color: var(--primary-pink);
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .benefit-text {
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #FFF9F5 0%, #E8F4FF 100%);
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--primary-pink);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .testimonial-stars {
+            color: var(--gold-accent);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-pink), var(--soft-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #FFF9F5 0%, #FFE5F0 100%);
+            border-radius: 25px;
+            padding: 45px 35px;
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold-accent);
+            box-shadow: 0 20px 45px rgba(255,105,180,0.25);
+        }
+
+        .pricing-badge {
+            background: var(--gold-accent);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .pricing-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-bottom: 10px;
+        }
+
+        .pricing-period {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .pricing-features li i {
+            color: var(--primary-pink);
+            margin-right: 10px;
+        }
+
+        .pricing-btn {
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--soft-purple) 100%);
+            color: white;
+            padding: 15px 45px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(255,105,180,0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .pricing-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,105,180,0.4);
+            color: white;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--soft-purple) 50%, var(--pastel-blue) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before,
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .cta-section::before {
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+        }
+
+        .cta-section::after {
+            bottom: -150px;
+            right: -150px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 35px;
+            opacity: 0.95;
+        }
+
+        .cta-btn {
+            background: white;
+            color: var(--primary-pink);
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            color: var(--primary-pink);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #4A4A4A 0%, #2C2C2C 100%);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-brand {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-pink);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .product-showcase {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-sparkles"></i> LiviaRose</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#shop">Shop</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <h1 class="hero-title">Handmade Hair Clips Made with Love <i class="fas fa-heart"></i></h1>
+                    <p class="hero-subtitle">Unique, beautiful, and crafted just for you! Each clip is a little piece of magic to make you sparkle ✨</p>
+                    <a href="#shop" class="hero-cta"><i class="fas fa-shopping-bag"></i> Shop Now</a>
+                </div>
+                <div class="col-lg-6 col-md-12 hero-image">
+                    <div class="product-showcase">
+                        <img src="images/hairclip_014.png" alt="LiviaRose Handmade Hair Clips Collection" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Why You'll Love Them <i class="fas fa-star"></i></h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-hand-sparkles"></i>
+                        </div>
+                        <h3 class="benefit-title">Handmade with Care</h3>
+                        <p class="benefit-text">Each hair clip is lovingly handcrafted by LiviaRose, making every piece unique and special just for you!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="benefit-title">Tons of Colors</h3>
+                        <p class="benefit-text">From sparkly rainbow to pretty pastels, we have so many colors and designs to match your style!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="benefit-title">Comfortable to Wear</h3>
+                        <p class="benefit-text">Super comfy and gentle on your hair - you can wear them all day long without any ouchies!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="benefit-title">Strong & Durable</h3>
+                        <p class="benefit-text">Made with quality materials that last! Your hair clip will stay beautiful through all your adventures.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3 class="benefit-title">Perfect Gift</h3>
+                        <p class="benefit-text">Looking for a gift? These clips make the perfect present for birthdays, holidays, or just because!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h3 class="benefit-title">Affordable Prices</h3>
+                        <p class="benefit-text">Beautiful accessories that don't break the piggy bank! Great quality at prices everyone loves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Happy Customers Say <i class="fas fa-comments"></i></h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"My daughter absolutely loves her new hair clips! She wears them every single day to school. The quality is amazing!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">S</div>
+                            <div>
+                                <div class="testimonial-name">Sarah M.</div>
+                                <div class="testimonial-role">Mom of Emma, age 8</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"These clips are so pretty and sparkly! I got the rainbow set and all my friends want to know where I got them. Best clips ever!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">L</div>
+                            <div>
+                                <div class="testimonial-name">Lily, age 10</div>
+                                <div class="testimonial-role">Happy Customer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I bought these as party favors for my daughter's birthday and all the girls loved them! So cute and well-made. Will definitely order again!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">J</div>
+                            <div>
+                                <div class="testimonial-name">Jennifer K.</div>
+                                <div class="testimonial-role">Mom of Sophia, age 7</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="shop" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Choose Your Favorites <i class="fas fa-shopping-cart"></i></h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-title">Single Clip</div>
+                        <div class="pricing-price">$5</div>
+                        <div class="pricing-period">per clip</div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> 1 Handmade Hair Clip</li>
+                            <li><i class="fas fa-check-circle"></i> Choose Your Color</li>
+                            <li><i class="fas fa-check-circle"></i> Perfect for Trying Out</li>
+                            <li><i class="fas fa-check-circle"></i> Free Sticker Included</li>
+                        </ul>
+                        <a href="#" class="pricing-btn">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <span class="pricing-badge">Most Popular</span>
+                        <div class="pricing-title">Clip Set</div>
+                        <div class="pricing-price">$12</div>
+                        <div class="pricing-period">3 clips</div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> 3 Handmade Hair Clips</li>
+                            <li><i class="fas fa-check-circle"></i> Mix & Match Colors</li>
+                            <li><i class="fas fa-check-circle"></i> Save $3!</li>
+                            <li><i class="fas fa-check-circle"></i> Cute Gift Box Included</li>
+                        </ul>
+                        <a href="#" class="pricing-btn">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <span class="pricing-badge">Best Value</span>
+                        <div class="pricing-title">Deluxe Collection</div>
+                        <div class="pricing-price">$20</div>
+                        <div class="pricing-period">6 clips</div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> 6 Handmade Hair Clips</li>
+                            <li><i class="fas fa-check-circle"></i> Rainbow Variety Pack</li>
+                            <li><i class="fas fa-check-circle"></i> Save $10!</li>
+                            <li><i class="fas fa-check-circle"></i> Beautiful Gift Box + Extras</li>
+                        </ul>
+                        <a href="#" class="pricing-btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Shine? <i class="fas fa-sparkles"></i></h2>
+                <p class="cta-subtitle">Get your beautiful handmade hair clips today and stand out from the crowd!</p>
+                <a href="#shop" class="cta-btn floating">Start Shopping Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-brand">LiviaRose</div>
+                    <p class="footer-text">Handmade with love, designed to make you sparkle! Each clip is crafted with care to bring joy and beauty to your day.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5 class="mb-3">Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LiviaRose. Made with <i class="fas fa-heart"></i> by Olivia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
