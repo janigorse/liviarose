@@ -37,7 +37,7 @@
     <meta name="product-category" content="Handmade Accessories, Hair Clips, Kids Fashion">
     <meta name="target-audience" content="Parents of children ages 5-12, gift shoppers, party planners">
 
-    <!-- Schema.org Structured Data for GEO -->
+    <!-- Schema.org Structured Data for Store -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -51,53 +51,201 @@
         "@type": "Person",
         "name": "Olivia"
       },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Hair Clips",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Single Handmade Hair Clip",
-              "description": "1 handmade hair clip in random color with free thank you card",
-              "category": "Hair Accessories",
-              "offers": {
-                "@type": "Offer",
-                "price": "5.00",
-                "priceCurrency": "USD"
-              }
-            }
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "3",
+        "bestRating": "5",
+        "worstRating": "5"
+      }
+    }
+    </script>
+
+    <!-- Schema.org Product Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Single Handmade Hair Clip",
+      "description": "1 handmade hair clip in random color with free thank you card. Lovingly handcrafted by Olivia, each clip is unique and special.",
+      "image": "https://www.liviarose.shop/images/hero.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "LiviaRose"
+      },
+      "category": "Hair Accessories",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.liviarose.shop/#shop",
+        "priceCurrency": "USD",
+        "price": "5.00",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-12-31",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "3.00",
+            "currency": "USD"
           },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Clip Set - 3 Hair Clips",
-              "description": "3 handmade hair clips in random colors with gift box and free thank you card. Save $3!",
-              "category": "Hair Accessories",
-              "offers": {
-                "@type": "Offer",
-                "price": "12.00",
-                "priceCurrency": "USD"
-              }
-            }
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
           },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Deluxe Collection - 6 Hair Clips",
-              "description": "6 handmade hair clips in random colors with gift box and free thank you card. Save $10!",
-              "category": "Hair Accessories",
-              "offers": {
-                "@type": "Offer",
-                "price": "20.00",
-                "priceCurrency": "USD"
-              }
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 3,
+              "maxValue": 7,
+              "unitCode": "DAY"
             }
           }
-        ]
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "3",
+        "bestRating": "5",
+        "worstRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Clip Set - 3 Hair Clips",
+      "description": "3 handmade hair clips in random colors with gift box and free thank you card. Save $3! Each clip lovingly handcrafted by Olivia.",
+      "image": "https://www.liviarose.shop/images/hero.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "LiviaRose"
+      },
+      "category": "Hair Accessories",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.liviarose.shop/#shop",
+        "priceCurrency": "USD",
+        "price": "12.00",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-12-31",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "5.00",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 3,
+              "maxValue": 7,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "3",
+        "bestRating": "5",
+        "worstRating": "5"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Deluxe Collection - 6 Hair Clips",
+      "description": "6 handmade hair clips in random colors with gift box and free thank you card. Save $10! Each clip lovingly handcrafted by Olivia.",
+      "image": "https://www.liviarose.shop/images/hero.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "LiviaRose"
+      },
+      "category": "Hair Accessories",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.liviarose.shop/#shop",
+        "priceCurrency": "USD",
+        "price": "20.00",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-12-31",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "5.00",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 3,
+              "maxValue": 7,
+              "unitCode": "DAY"
+            }
+          }
+        }
       },
       "aggregateRating": {
         "@type": "AggregateRating",
