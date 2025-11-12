@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - LiviaRose</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-pink: #FF69B4;
+            --soft-purple: #E6B8F5;
+            --pastel-blue: #B4D7FF;
+            --warm-coral: #FFB4A2;
+            --gold-accent: #FFD700;
+            --soft-white: #FFF9F5;
+            --text-dark: #4A4A4A;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #FFF9F5 0%, #FFE5F0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .thank-you-container {
+            background: white;
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(255,105,180,0.2);
+            max-width: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thank-you-container::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255,105,180,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            color: var(--primary-pink);
+            margin-bottom: 30px;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .thank-you-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-bottom: 20px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .thank-you-text {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #FFF9F5 0%, #FFE5F0 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid var(--primary-pink);
+        }
+
+        .info-box h4 {
+            color: var(--primary-pink);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .info-box p {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .info-box i {
+            color: var(--primary-pink);
+            margin-right: 10px;
+        }
+
+        .btn-home {
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--soft-purple) 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(255,105,180,0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,105,180,0.4);
+            color: white;
+        }
+
+        .social-links {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .social-links p {
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .social-links a {
+            color: var(--primary-pink);
+            font-size: 1.8rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--soft-purple);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 40px 25px;
+            }
+
+            .thank-you-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+
+        <h1 class="thank-you-title">Thank You! <i class="fas fa-heart"></i></h1>
+
+        <p class="thank-you-text">
+            Your order has been received and we're so excited to create your beautiful handmade hair clips!
+        </p>
+
+        <div class="info-box">
+            <h4><i class="fas fa-envelope"></i> Check Your Email</h4>
+            <p>
+                <i class="fas fa-check"></i> Order confirmation with invoice<br>
+                <i class="fas fa-check"></i> Receipt from Stripe<br>
+                <i class="fas fa-check"></i> Tracking information (when shipped)
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h4><i class="fas fa-shipping-fast"></i> What Happens Next?</h4>
+            <p>
+                <strong>1-3 days:</strong> Olivia will lovingly handcraft your clips<br>
+                <strong>3-7 days:</strong> Your order will be shipped to you<br>
+                <strong>Total time:</strong> 4-10 business days
+            </p>
+        </div>
+
+        <p class="thank-you-text" style="margin-top: 30px;">
+            Each clip is made with care and love, just for you. Thank you for supporting a young creator! ✨
+        </p>
+
+        <a href="index.html" class="btn-home">
+            <i class="fas fa-home"></i> Return to Home
+        </a>
+
+        <div class="social-links">
+            <p><strong>Follow us for updates and new designs!</strong></p>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
